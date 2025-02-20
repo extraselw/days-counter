@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
         durationElement.innerHTML = `${days} ${getWordForm(days, "день", "дня", "дней")} и 
-            ${hours} ${getWordForm(hours, "час", "часа", "часов")} <span class="heart-icon">❤️</span>`;
+            ${hours} ${getWordForm(hours, "час", "часа", "часов")} <span class="heart-icon">❤️‍🔥</span>`;
     }
 
     calculateDuration();
