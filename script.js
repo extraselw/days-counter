@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const startDate = new Date("2024-10-17T00:00:00Z"); // UTC-время старта
+    const startDate = new Date("2024-10-17T16:51:00Z"); // UTC-время старта (21:51 UTC+5)
     const durationElement = document.getElementById("loveDuration");
 
     function getWordForm(number, one, few, many) {
@@ -17,9 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
         
         const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 
-        durationElement.innerHTML = `${days} ${getWordForm(days, "день", "дня", "дней")} и 
-            ${hours} ${getWordForm(hours, "час", "часа", "часов")} <span class="heart-icon">❤️‍🔥</span>`;
+        durationElement.innerHTML = `${days} ${getWordForm(days, "день", "дня", "дней")}, 
+            ${hours} ${getWordForm(hours, "час", "часа", "часов")} и 
+            ${minutes} ${getWordForm(minutes, "минута", "минуты", "минут")} <span class="heart-icon">❤️‍🔥</span>`;
     }
 
     calculateDuration();
