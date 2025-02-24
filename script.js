@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const startDate = new Date("2024-10-17T16:51:00Z"); // UTC-время старта (21:51 UTC+5)
+    const startDate = new Date("2024-10-17T21:51:00+05:00"); // Учитываем часовой пояс UTC+5
     const durationElement = document.getElementById("loveDuration");
 
     function getWordForm(number, one, few, many) {
@@ -9,10 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function calculateDuration() {
-        const nowUTC = new Date();
-        const utcOffset = 5 * 60 * 60 * 1000; // Смещение UTC+5 в миллисекундах
-        const currentDate = new Date(nowUTC.getTime() + utcOffset); // Корректируем время
-        
+        const currentDate = new Date(); // Локальное время браузера
         const timeDiff = currentDate - startDate;
         
         const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
